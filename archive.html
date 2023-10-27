@@ -1,0 +1,22 @@
+---
+layout: full-width
+title: archive
+---
+<h1 class="content-listing-header sans">ARCHIVE</h1>
+<ul class="content-listing ">
+{% assign posts_collate = site.pages | sort:"date" %}
+
+{% if site.JB.posts_collate.provider == "custom" %}
+  {% include custom/posts_collate %}
+{% else %}
+  {% for post in posts_collate reversed %}
+  {% if post.layout == "post" and post.title != null %}
+          <hr class="slender">
+          <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="contrast" style="margin-bottom: 0rem">{{ post.title }}</h3></a>
+          <span class='sans'>{{ post.date | date: "%B %-d, %Y" }}{% if post.progress %}({{ post.progress }} complete){% endif %}</span>
+          <div style="margin-top: 0.5rem">{% if post.description %}{{ post.description }}{% endif %}</div>
+  {% endif %}
+  {% endfor %}
+</ul>
+{% endif %}
+{% assign posts_collate = nil %}

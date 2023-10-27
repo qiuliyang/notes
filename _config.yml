@@ -1,0 +1,30 @@
+baseurl: /notes
+title: Notes
+subtitle: My personal notes of some research and learning topics
+author: Minhuan Li
+emailme: mailto:minhuanli@g.harvard.edu
+simple_search: http://google.com/search
+description: Research and learning notes
+name: notes
+markdown: kramdown
+highlighter: rouge
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+permalink: /articles/:short_year/:title
+timezone: America/New_York
+excerpt_separator: <!--more-->  # you can specify your own separator, of course.
+exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', 'README.md']
+plugins:
+  - jekyll-jupyter-notebook
+post:
+  template: _post.txt
+  extension: md
+page:
+  template: _page.txt
+  extension: md
+editor: gvim
+git:
+  branch: master
+transfer:
+  command: rsync
+  settings: -av
+  source: _site/

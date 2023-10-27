@@ -1,0 +1,17 @@
+<!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+	<a href="{{site.baseurl}}/"><img class="badge" src="{{site.baseurl}}/assets/img/einstein.png" alt="CH"></a>
+	<a href="{{ site.baseurl }}/">Home</a>
+    {% assign pages_list = site.pages %}
+      {% for node in pages_list %}
+        {% if node.title != null %}
+          {% if node.layout == "full-width" %}
+              <a href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    <a href="http://github.com/minhuanli/notes">GitHub</a>
+    <a href="http://minhuanli.github.io">Main Blog</a>
+	</nav>
+</header>

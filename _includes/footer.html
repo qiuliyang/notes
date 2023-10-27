@@ -1,0 +1,15 @@
+<footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="{{ site.emailme }}"><span class="icon-mail3"></span></a></li>
+    {% for entry in site.data.social %}
+      <li>
+        <a href="{{ entry.link }}"><span class="{{ entry.icon }}"></span></a>
+      </li>
+    {% endfor %}  
+  </ul>
+<div class="credits">
+<span>&copy; {{ site.time | date: '%Y' }} &nbsp;{{ site.author }} &middot; <a href="//minhuanli.github.io">Main Blog</a></span></br> <br>
+Icon credit to <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>. Site created with <a href="//jekyllrb.com">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a>.
+</div>  
+</footer>
